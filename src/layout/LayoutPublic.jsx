@@ -1,14 +1,15 @@
 import { Outlet } from "react-router-dom";
+import NavBar from "../components/NavBar";
 
 const LayoutPublic = () => {
   return (
     <div>
-      <nav>NavBar</nav>
-      <main>
+      <main className="container">
+        <NavBar />
         <Outlet />
         {/* Se trae el elemento del archivo de configuración, el element (Home, Blog, About)*/}
       </main>
-      <footer>Footer</footer>
+      <footer className="container text-center">Footer</footer>
     </div>
   );
 };
