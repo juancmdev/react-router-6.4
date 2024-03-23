@@ -1,9 +1,21 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Blog = () => {
   const { posts } = useLoaderData();
   console.log(posts);
-  return "Blog";
+  return (
+    <ul>
+      {posts.length > 0 ? (
+        posts.map((post) => (
+          <li key={post.id}>
+            <Link to={`/blog/${post.id}`}>{post.title}</Link>
+          </li>
+        ))
+      ) : (
+        <li>No blogs found</li>
+      )}
+    </ul>
+  );
 };
 
 export default Blog;
