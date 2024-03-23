@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import LayoutPublic from "../layout/LayoutPublic";
 import Home from "../pages/Home";
 import About from "../pages/About";
-import Blog from "../pages/Blog";
+import Blog, { loaderBlog } from "../pages/Blog";
 import Notfound from "../pages/Notfound";
 
 export const router = createBrowserRouter([
@@ -24,6 +24,8 @@ export const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+        loader:
+          loaderBlog /**Este es el loaderblog que se exportó desde el blog */,
       },
     ],
   },
