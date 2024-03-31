@@ -3,6 +3,7 @@ import LayoutPublic from "../layout/LayoutPublic";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Blog, { loaderBlog } from "../pages/Blog";
+import Post, { loaderPost } from "../pages/Post";
 import Notfound from "../pages/Notfound";
 
 export const router = createBrowserRouter([
@@ -26,6 +27,11 @@ export const router = createBrowserRouter([
         element: <Blog />,
         loader:
           loaderBlog /**Este es el loaderblog que se exportó desde el blog */,
+      },
+      {
+        path: "/blog/:id",
+        element: <Post />,
+        loader: loaderPost,
       },
     ],
   },
