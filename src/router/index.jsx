@@ -13,25 +13,30 @@ export const router = createBrowserRouter([
     errorElement: <Notfound />,
     children: [
       {
-        index: true,
-        element: <Home />,
-      },
+        errorElement: <Notfound />,
+        children: [
+          {
+            index: true,
+            element: <Home />,
+          },
 
-      {
-        path: "/about",
-        element: <About />,
-      },
+          {
+            path: "/about",
+            element: <About />,
+          },
 
-      {
-        path: "/blog",
-        element: <Blog />,
-        loader:
-          loaderBlog /**Este es el loaderblog que se exportó desde el blog */,
-      },
-      {
-        path: "/blog/:id",
-        element: <Post />,
-        loader: loaderPost,
+          {
+            path: "/blog",
+            element: <Blog />,
+            loader:
+              loaderBlog /**Este es el loaderblog que se exportó desde el blog */,
+          },
+          {
+            path: "/blog/:id",
+            element: <Post />,
+            loader: loaderPost,
+          },
+        ],
       },
     ],
   },
